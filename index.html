@@ -26,16 +26,60 @@
                         Mastodon: https://ieji.de/@dvejmz
 
                         LinkedIn
+
+                        Notes: I submitted this talk's title as "Feedback Loops at Work" but it could just as well be called
+                        "How to Taste Your Code as you build" because of all the food talk I've managed to slip in this, you'll see in a minute...
+                        ---
+                        ![](img/expensive-sarny.jpg) <!-- .element: height="600" -->
+                        <!-- https://www.pouted.com/ -->
+                        ---
+                        - Bread: £5
+                        - Truffle: £5
+                        - Ham: £5
+                        - ...
+                        - Total: £200
+
+                        Notes: you're the owner of a gourmet sandwich bar
+                        ---
+                        ![](img/basic-sarny.jpg) <!-- .element: height="600" -->
+
+                        <!-- https://ar.inspiredpencil.com/pictures-2023/plain-ham-and-cheese-sandwich -->
+                        ---
+                        - Bread: £1
+                        - Ham: £1
+                        - Cheese: £1
+                        - Mayo: £0.50
+                        - ...
+                        - Total: £3.50
+
+                        Notes: so you run back to the kitchen and put on some mayo or whatever, come back. Now this is more like it! A touch of olive oil...
+                        ---
+                        What's the best sandwich you can make _for them_?
+
+                        <!-- TODO: improve this question, more impact -->
+                        ---
+                        ## Failing Fast
+
+                        ![](img/zuck.jpg)
+
+                        Notes:
+                            Moving fast enables us to build more things and learn faster.
+                            However, as most companies grow, they slow down too much because they're
+                            more afraid of making mistakes than they are of losing opportunities by
+                            moving too slowly. We have a saying: 'Move fast and break
+                            things.' The idea is that if you never break anything, you're probably
+                            not moving fast enough.
+                            If there is an issue, your quickest, tightest, smallest loops may not catch it in its entirety (as its implications could be broad), but you may catch a bit of it: enough to signal there’s trouble afoot. So you iron out the problem without having to go to the bigger loops yet. And when you do, you do your bigger loops next, to make sure you removed all of the problem, not just the small bit your tightest loop was able to identify
                         ---
                         ## What is a feedback loop?
 
-                        A feedback loop is a cyclical process of acting, checking results against a goal, and adjusting actions until the goal is reached or state is maintained indefinitely.
+                        A feedback loop is a cyclical process of acting, checking results against a goal, and adjusting actions until the goal is reached or a desired state is maintained.
 
                         [Illustration]
                         ---
                         ## Feedback loops in our daily lives
 
-                        ![](img/thermostat.webp)
+                        ![](img/thermostat.webp) <!-- .element: height="400" -->
 
                         Notes:
                         iStock
@@ -59,54 +103,51 @@
                         Say it like this: Scrum sprints? that’s a feedback loop, roadmaps? a feedback loop, CI/CD? all about the loops. Almost everything works in loops.
                         ---
                         ![](img/devops.png)
+                        <!--  https://tomd.xyz/devops-guide/ -->
                         ---
-                        ## Why should I care?
-                        ---
-                        ![](img/expensive-sarny.jpg) <!-- .element: height="600" -->
-                        ---
-                        - Bread: £5
-                        - Truffle: £5
-                        - Ham: £5
-                        - ...
-                        - Total: £200
-                        ---
-                        ![](img/basic-sarny.jpg) <!-- .element: height="600" -->
-                        ---
-                        - Bread: £1
-                        - Ham: £1
-                        - Cheese: £1
-                        - ...
-                        - Total: £3.50
-                        ---
-                        ## Will they eat the sandwich?
-                        ---
-                        ## Failing Fast
+                        ## Are all loops good?
 
-                        ![](img/zuck.jpg)
+                        Bad feedback loops:
+
+                        - A misconfigured API request retry mechanism <!-- When you don't implement back-off algorithms, max retries, no short-circuiting, and end up overwhelming upstream services -->
+                        - A project in Death March
+                        - Goodhart's Law
+                        - Wanting to punch ChatGPT after it tried to gaslight you for the 5th time in the same convo
 
                         Notes:
-                            Moving fast enables us to build more things and learn faster.
-                            However, as most companies grow, they slow down too much because they're
-                            more afraid of making mistakes than they are of losing opportunities by
-                            moving too slowly. We have a saying: 'Move fast and break
-                            things.' The idea is that if you never break anything, you're probably
-                            not moving fast enough.
-                            If there is an issue, your quickest, tightest, smallest loops may not catch it in its entirety (as its implications could be broad), but you may catch a bit of it: enough to signal there’s trouble afoot. So you iron out the problem without having to go to the bigger loops yet. And when you do, you do your bigger loops next, to make sure you removed all of the problem, not just the small bit your tightest loop was able to identify
+                        Ask audience if they can think of any examples of bad feedback loops
+                        When a measure becomes a target, it ceases to be a good measure.
                         ---
                         ## More loops, tighter, faster!
 
                         Get as many loops in place as you can, and tighten them up so you can go round them as fast as possible!
 
                         Notes:
+                        Anyway, let's go back to the good loops, the nice loops.
                         This doesn’t mean rush through things, but to make small, constant adjustments through small iterations.
                         ---
                         ## Standard SDLC
                         ---
-                        ## Tightening the loop
+                        ## Tasting as we cook
+
+                        [Illustration of improved diagram]
+
+                        Notes:
+                        Bringing back the sandwich cook analogy from earlier, I've not gone to cooking school but I've watched loads
+                        of Masterchef, and one of the first things they teach you is to always taste your food as you make it.
+                        Because a lot of errors are much quicker and cheaper to correct early on. Building software
+                        is not the same as cooking, as much as I'd love it to be, but there are parallels.
+                        I believe there are plenty of ways to "taste our software" as we build it. Let me show you how.
+                        ---
+                        ## User story
+
+                        - Iterative software development
+                        - 3 amigos
+                        - Story mapping, event storming, context mapping
                         ---
                         ## Beyond feedback loops
 
-                        Treat everything like an experiment
+                        Everything is an experiment
                         ---
                         ## Experimenting
 
