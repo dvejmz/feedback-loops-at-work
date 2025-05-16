@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides">
+			<div class="slides container">
 				<section data-markdown>
                     <textarea data-template>
                         ## Feedback Loops at Work
@@ -138,12 +138,82 @@
                         Because a lot of errors are much quicker and cheaper to correct early on. Building software
                         is not the same as cooking, as much as I'd love it to be, but there are parallels.
                         I believe there are plenty of ways to "taste our software" as we build it. Let me show you how.
+                        Now I'm sure many of the techniques and ideas I'll talk about now many of you already do. Consider this a comprehensive checklist of ways to tighten your loops.
                         ---
                         ## User story
+                        <!-- Do small drawings for almost every slide to encapsulate
+                            the gist of the slide so they're not so boring to look at -->
 
                         - Iterative software development
                         - 3 amigos
-                        - Story mapping, event storming, context mapping
+                        - Story mapping, event storming, example mapping
+                        - Proof of concept, mock-ups
+                        ---
+                        ## Writing code
+
+                        - Compiler
+                        - IDE hints, linters, static analysis
+                        - Debuggers
+                        - Print/log statements
+
+                        Notes: this one's easy
+                        ---
+                        ## Unit tests
+
+                        - TDD
+                        - Hot reloading
+                        - Watch mode
+                        - Fast unit tests
+
+                        Notes: if running your full unit test suite takes more than a few seconds, they're not fast
+                        ---
+                        ## Manual testing in local dev environment
+
+                        - Do it less by writing more automated tests if you can
+                        - Aim to have a repeatable, automated environment & data setup process, e.g. Docker, minikube, etc.
+                        ---
+                        ## Continuous Integration
+
+                        - Walking skeleton
+                        - Build on PR / push
+                        - A fast pipeline
+                        - Trunk-based development
+                        - Feature toggles
+                        - Contract testing
+                        ---
+                        ## Code & architecture reviews
+
+                        - Pair & ensemble programming
+                        ---
+                        ## Testing in an integration environment
+
+                        - Ephemeral, preview environments
+                        ---
+                        ## UAT & Internal Demos
+
+                        - Show progress to stakeholders and obtain feedback regularly (once a week, more often if you can!)
+                        - Ask people to use your system and watch them while they do it
+                        - Dogfooding
+
+                        Notes:
+                        If they get confused or ask questions, that's a bug.
+                        ---
+                        ## Releasing
+
+                        - Monitoring
+                        - Canary releases
+                        - Dual running, shadow launches
+                        - Feature toggles
+                        - A/B testing
+                        ---
+                        ## Organisation
+
+                        - Embrace validated learning
+                        - Concierge MVP
+                        - Value stream mapping
+                        - Multi-disciplinary, empowered, self-organising teams
+
+                        Notes: do you need to do all of these? No, not really. Not all of these will apply to every use case, of course (e.g. asking for user feedback is harder when you're building a data analytics pipeline, for example).
                         ---
                         ## Beyond feedback loops
 
@@ -151,12 +221,15 @@
                         ---
                         ## Experimenting
 
-                        1. Come up with a hypothesis to bootstrap your loop: I believe this product/feature/service will solve this problem or make someone else’s life or work better in this way
+                        1. Come up with a hypothesis
                         2. Build the bare minimum you can to prove it
-                        3. Measure response, collect feedback
-                        4. Learn from it, adapt, and off you go again round the loop!
+                        3. Measure response, obtain feedback
+                        4. Learn, adjust, repeat
 
                         Allows us to be scientific, data-driven
+
+                        Notes:
+                        Hypothesis: I believe this product/feature/service will solve this problem or make someone else’s life or work better in this way
                         ---
                         ## I'd love your feedback!
                         ---
