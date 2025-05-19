@@ -39,7 +39,7 @@
                         - ...
                         - Total: £200
 
-                        Notes: you're the owner of a gourmet sandwich bar
+                        Notes: you're the owner of a brand-new gourmet sandwich bar. So brand-new indeed you haven't even designed a sandwich menu yet
                         ---
                         ![](img/basic-sarny.jpg) <!-- .element: height="600" -->
 
@@ -96,9 +96,7 @@
                         ![](img/devops.png)
                         <!--  https://tomd.xyz/devops-guide/ -->
                         ---
-                        ## Are all loops good?
-
-                        Bad feedback loops:
+                        ## Not all loops are good
 
                         - A misconfigured API request retry mechanism <!-- When you don't implement back-off algorithms, max retries, no short-circuiting, and end up overwhelming upstream services -->
                         - A project in Death March
@@ -139,6 +137,11 @@
                         This doesn’t mean rush through things, but to make small, constant adjustments through small iterations.
                         ---
                         ## Standard SDLC
+
+                        Notes:
+                        Ask audience: show of hands whose development process looks similar enough to this.
+                        How long does it take you to complete a full cycle through it?
+                        What if we could compress this down to 1 week? Even less than that?
                         ---
                         ## Tasting as we cook
 
@@ -151,6 +154,7 @@
                         is not the same as cooking, as much as I'd love it to be, but there are parallels.
                         I believe there are plenty of ways to "taste our software" as we build it. Let me show you how.
                         Now I'm sure many of the techniques and ideas I'll talk about now many of you already do. Consider this a comprehensive checklist of ways to tighten your loops.
+                        If you want to learn more about any of these, feel free to ask me at the end or grab me later.
                         ---
                         ## Business Strategy Alignment
 
@@ -159,29 +163,38 @@
                             - Embrace validated learning
                             - Concierge MVP
                             - Iterative software development
-                        - Value stream mapping
+                        - Value Stream Mapping
                         - Multi-disciplinary, empowered, self-organising teams
 
                         Notes:
                         The first thing you can do to shorten your iterations is to actually turn the entire cycle on its head
                         and optimise at the very beginning. The best kind of work is the work you don't have to do.
                         How do you save yourself some cycles through the loop?
+                        Value stream mapping to trim out steps from your process that don't add value
                         ---
                         ## User story
-                        <!-- Do small drawings for almost every slide to encapsulate
-                            the gist of the slide so they're not so boring to look at -->
 
+                        <!-- Do emoji on the titles so they're not so boring to look at -->
+
+                        - Small changes
                         - 3 amigos
+                        - Vertical slices
                         - Story mapping, event storming, example mapping
                         - UI mock-ups
                         - Proof of concept
+
+                        Notes:
+                        The idea is that you'll be completing passes through all of the loops in a very short space of time
+                        In order to achieve that, the scope of your changes needs to be very small, otherwise it's impossible.
+                        ---
+                        <!-- Visualising vertical slices -->
                         ---
                         ## Writing code
 
-                        - Compiler
-                        - IDE hints, linters, static analysis
-                        - Debuggers
-                        - Print/log statements
+                        - IDE hints
+                        - Compiler (if there is one)
+                        - Linters, static analysis
+                        - Debuggers (or print/log statements)
 
                         Notes: this one's easy
                         ---
@@ -197,31 +210,55 @@
                         ## Manual testing in local dev environment
 
                         - Do it less by writing more automated tests if you can
-                        - Live reloading
                         - Aim to have a repeatable, automated environment & data setup process, e.g. Docker, minikube, etc.
+                        - Live reloading (PHP FTW)
+
+                        Notes: mount Docker volumes if you use Docker for your local environments
                         ---
                         ## Code & architecture reviews
 
                         - Pair & ensemble programming
                         - Whiteboarding
-                        - Produce documentation from code automatically
                         ---
                         ## Continuous Integration
 
-                        - Walking skeleton
+                        - Fast build pipelines
                         - Build on PR / push
-                        - A fast pipeline
+                        - Walking skeleton
                         - Trunk-based development
                         - Feature toggles
                         - Contract testing
                         ---
+
+                        ![](img/deming.jpeg) <!-- .element: height="300" -->
+                        >Inspection is too late. The quality, good or bad, is already in the product.
+
+                        W. Edwards Deming
+                        ---
                         ## Testing in an integration environment
 
                         - Ephemeral, preview environments
+                        - Build interfaces first
+                        - No QA handovers
+
+                        ---
+                        ## Canned to realsies
+
+                        <!-- Add a picture visualising a canned becoming something for realsies -->
+
+                        1. Define and agree on contract between consumer and provider
+                        2. Build enough of the backend to return something to consumers that adheres to contract
+                        3. Build enough of the frontend to consume it, as though it were real data
+                        4. Once integration is proved, flesh out backend to return actual data
+
+                        Notes:
+                        This technique may not be required for really simple interfaces or endpoints but it can be
+                        very powerful for more involved integrations
+                        You first build a smoke-and-mirrors version of it.
                         ---
                         ## UAT & Internal Demos
 
-                        - Show progress to stakeholders and obtain feedback regularly (once a week, more often if you can!)
+                        - Show progress to stakeholders and obtain feedback frequently (at least once a week, more often if you can!)
                         - Ask people to use your system and watch them while they do it
                         - Dogfooding
 
@@ -230,10 +267,12 @@
                         ---
                         ## Releasing
 
+                        - *Release small and frequently*
+                        - Deployment pipelines
                         - Monitoring
+                        - Feature toggles
                         - Canary releases
                         - Dual running, shadow launches
-                        - Feature toggles
                         - A/B testing
 
                         Notes: do you need to do all of these? No, not really. Not all of these will apply to every use case, of course (e.g. asking for user feedback is harder when you're building a data analytics pipeline, for example).
