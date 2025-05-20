@@ -36,6 +36,11 @@
                         Speaking of food, let me open up with a little scenario here to get us warmed up
                         ---
                         Let's open a sandwich bar!
+
+                        Notes: you're the proud owner of a brand-new gourmet sandwich bar. So brand-new indeed you haven't even designed a sandwich menu yet
+                        So the first customer walks in and asks you for a sandwich, and you're so excited to make a great first impression and get this customer
+                        to tell their friends all about the great sandwich they had at your bar that you run into the kitchen and prepare them the best
+                        sandwich you can think of
                         ---
                         ![](img/expensive-sarny.jpg) <!-- .element: height="600" -->
                         <!-- https://www.pouted.com/ -->
@@ -43,20 +48,24 @@
                         - Premium Sourdough Bread (2 slices): £0.80
                         - Fresh Truffle Shavings (5g): £5.00
                         - Best-in-Class Meat Cuts (60g): £4.50
-                        - Artisan Goat's Cheese (40g): £1.50
+                        - Imported Goat's Cheese (40g): £1.50
                         - Organic, Fresh Veggies (50g): £0.75
 
                         **Cooking time: 1 hour**
 
                         **Total: £12.55**
 
-                        Notes: you're the owner of a brand-new gourmet sandwich bar. So brand-new indeed you haven't even designed a sandwich menu yet
+                        Notes:
                         You pop into the local market to get all this fresh produce, you spend some time patiently shaving off your truffles,
                         slicing the meat with great care...
+
+                        Only that when you present your masterpiece to the client, they look at you with huge disappointment and tell you that
+                        they are both gluten and lactose intolerant, so that's 12 quid and an hour of your time you're never getting back...
                         ---
                         ![](img/basic-sarny.jpg) <!-- .element: height="600" -->
 
-                        <!-- https://ar.inspiredpencil.com/pictures-2023/plain-ham-and-cheese-sandwich -->
+                        Notes:
+                        Now let's imagine you had decided not to get too carried away with your first order and stick to the basics: a ham and cheese sandwich it is
                         ---
 
                         - Normal Sliced Bread (2 slices): £0.15
@@ -68,7 +77,7 @@
                         **Total: £1.00**
 
                         Notes:
-                        So you run back to the kitchen and put on some mayo or whatever, come back. Now this is more like it! A touch of olive oil...
+                        Now you get the same reaction from the client, but this time is no big deal.
 
                         What I described there in an arguably contrived way is two types of feedback loops.
                         Both of them ended up roughly at the same place place, only one of them got there a lot sooner and cheaper.
@@ -94,11 +103,11 @@
                         ---
                         ## Feedback loops at work
 
-                        - TDD
-                        - Debugging
-                        - Scrum sprints (inspect and adapt)
-                        - A performance review at work
-                        - CI/CD
+                        - TDD <!-- .element: class="fragment" -->
+                        - Debugging <!-- .element: class="fragment" -->
+                        - Scrum sprints (inspect and adapt) <!-- .element: class="fragment" -->
+                        - A performance review at work <!-- .element: class="fragment" -->
+                        - CI/CD <!-- .element: class="fragment" -->
 
                         Note:
                         Ask the audience to name a few examples of feedback loops in software engineering.
@@ -111,11 +120,11 @@
                         This is the neverending loop of continuous improvements any team that practices DevOps would follow, right?
                         Almost everything works in loops.
                         ---
-                        ## Not all loops are good
+                        ## When things get too loopy
 
-                        - Runaway retries in distributed systems
-                        - Goodhart's Law
-                        - Wanting to punch ChatGPT after it tried to gaslight you for the 5th time in the same convo
+                        - Runaway retries in distributed systems <!-- .element: class="fragment" -->
+                        - Goodhart's Law <!-- .element: class="fragment" -->
+                        - Wanting to punch ChatGPT after it tried to gaslight you for the 5th time in the same convo <!-- .element: class="fragment" -->
 
                         Notes:
                         Ask audience if they can think of any examples of bad feedback loops
@@ -189,7 +198,7 @@
 
                         - Do you even need to do the work?
                         - If you do, do you need to do _that_ much to start with?
-                            - Embrace validated learning
+                            - Validated learning
                             - Concierge MVP
                             - Iterative software development
                         - Value Stream Mapping
@@ -206,14 +215,14 @@
 
                         - Small changes
                         - 3 amigos
-                        - Vertical slices
-                        - Story mapping, event storming, example mapping
                         - UI mock-ups
                         - Proof of concept
+                        - Vertical slices
 
                         Notes:
                         The idea is that you'll be completing passes through all of the loops in a very short space of time
                         In order to achieve that, the scope of your changes needs to be very small, otherwise it's impossible.
+                        Collaborative session formats that tighten up the loop: Story mapping, event storming, example mapping
                         ---
                         ![](img/vertical-slices.png) <!-- .element: height="800" -->
                         ---
@@ -228,10 +237,10 @@
                         ---
                         ## 🧪 Unit tests
 
-                        - TDD
+                        - Fast unit tests
                         - Hot reloading
                         - Watch mode (tip: use `watchexec` to emulate this if your test suite doesn't support it)
-                        - Fast unit tests
+                        - TDD
 
                         Notes: if running your full unit test suite takes more than a few seconds, they're not fast
                         ---
@@ -241,7 +250,7 @@
                         - Aim to have a repeatable, automated environment & data setup process, e.g. Docker, minikube, etc.
                         - Live reloading (PHP FTW)
 
-                        Notes: mount Docker volumes if you use Docker for your local environments
+                        Notes: do it less, replace with automated tests, especially if it's regression testing. Mount Docker volumes if you use Docker for your local environments
                         ---
                         ## 🔎 Code & architecture reviews
 
