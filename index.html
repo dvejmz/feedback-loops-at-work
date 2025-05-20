@@ -8,10 +8,12 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 	<body>
 		<div class="reveal">
@@ -21,11 +23,13 @@
                         ## Feedback Loops at Work
                         ### LeedsPHP May '25
 
-                        David Jimenez, Consultant at T5 Digital
+                        Hi 👋 I'm David Jimenez
 
-                        Mastodon: https://ieji.de/@dvejmz
+                        Consultant at T5 Digital
 
-                        LinkedIn
+                        https://ieji.de/@dvejmz
+
+                        ![](img/liqr.png) <!-- .element: height="200" -->
 
                         Notes: I submitted this talk's title as "Feedback Loops at Work" but it could just as well be called
                         "How to Taste Your Code as you build" because of all the food talk I've managed to slip in this, you'll see in a minute...
@@ -99,17 +103,21 @@
                         ---
                         ![](img/devops.png)
                         <!--  https://tomd.xyz/devops-guide/ -->
+
+                        Notes:
+                        This is the neverending loop of continuous improvements any team that practices DevOps would follow, right?
+                        This is a good loop indeed.
                         ---
                         ## Not all loops are good
 
-                        - A misconfigured API request retry mechanism <!-- When you don't implement back-off algorithms, max retries, no short-circuiting, and end up overwhelming upstream services -->
-                        - A project in Death March (scope grows uncontrollably)
+                        - A misconfigured API request retry mechanism
                         - Goodhart's Law
                         - Wanting to punch ChatGPT after it tried to gaslight you for the 5th time in the same convo
 
                         Notes:
                         Ask audience if they can think of any examples of bad feedback loops
-                        When a measure becomes a target, it ceases to be a good measure.
+                        Goodhart's Law: When a measure becomes a target, it ceases to be a good measure. So people start optimising around metrics rather than outcomes.
+                        Misconfigured API requests: When you don't implement back-off algorithms, max retries, no short-circuiting, and end up overwhelming upstream services
                         ---
 
                         ![](img/hotwheels.jpeg) <!-- .element: height="600" -->
@@ -135,12 +143,16 @@
                         ---
                         ## More loops, tighter, faster!
 
-                        Get as many loops in place as you can, and tighten them up so you can go round them as fast as possible!
+                        Add loops and tighten them up so you can go round them as fast as possible!
+
+                        ![](img/loops.png) <!-- .element: height="500" -->
 
                         Notes:
                         This doesn’t mean rush through things, but to make small, constant adjustments through small iterations.
                         ---
                         ## Standard SDLC
+
+                        ![](img/sdlc-loose.png) <!-- .element: height="600" -->
 
                         Notes:
                         Ask audience: show of hands whose development process looks similar enough to this.
@@ -149,7 +161,7 @@
                         ---
                         ## Tasting as we cook
 
-                        [Illustration of improved diagram]
+                        ![](img/sdlc-tight.png) <!-- .element: height="600" -->
 
                         Notes:
                         Bringing back the sandwich cook analogy from earlier, I've not gone to cooking school but I've watched loads
@@ -159,6 +171,12 @@
                         I believe there are plenty of ways to "taste our software" as we build it. Let me show you how.
                         Now I'm sure many of the techniques and ideas I'll talk about now many of you already do. Consider this a comprehensive checklist of ways to tighten your loops.
                         If you want to learn more about any of these, feel free to ask me at the end or grab me later.
+
+                        The first thing you can do to shorten your iterations is to actually turn the entire cycle on its head
+                        and optimise at the very beginning. If you think about it, the "business alignment" step, for lack of a better term,
+                        doesn't really feel part of our loop, does it? It feels more like the straight ramp that speeds down
+                        into the loop. But what if the ramp is sending us into the wrong kind of loop? How can we better integrate this
+                        step into our cycles?
                         ---
                         ## Business Strategy Alignment
 
@@ -171,10 +189,9 @@
                         - Multi-disciplinary, empowered, self-organising teams
 
                         Notes:
-                        The first thing you can do to shorten your iterations is to actually turn the entire cycle on its head
-                        and optimise at the very beginning. The best kind of work is the work you don't have to do.
-                        How do you save yourself some cycles through the loop?
                         Value stream mapping to trim out steps from your process that don't add value
+                        The best kind of work is the work you don't have to do.
+                        How do you save yourself some cycles through the loop?
                         ---
                         ## User story
 
@@ -191,7 +208,7 @@
                         The idea is that you'll be completing passes through all of the loops in a very short space of time
                         In order to achieve that, the scope of your changes needs to be very small, otherwise it's impossible.
                         ---
-                        <!-- Visualising vertical slices -->
+                        ![](img/vertical-slices.png) <!-- .element: height="800" -->
                         ---
                         ## Writing code
 
@@ -248,17 +265,19 @@
                         ---
                         ## Canned to realsies
 
-                        <!-- Add a picture visualising a canned becoming something for realsies -->
-
-                        1. Define and agree on contract between consumer and provider
-                        2. Build enough of the backend to return something to consumers that adheres to contract
-                        3. Build enough of the frontend to consume it, as though it were real data
-                        4. Once integration is proved, flesh out backend to return actual data
+                        ![](img/canned-to-realsies.png) <!-- .element: height="500" -->
 
                         Notes:
                         This technique may not be required for really simple interfaces or endpoints but it can be
                         very powerful for more involved integrations
                         You first build a smoke-and-mirrors version of it.
+                        ---
+                        ## Canned to realsies
+
+                        1. Define and agree on contract between consumer and provider
+                        2. Build enough of the backend to return something to consumers that adheres to contract
+                        3. Build enough of the frontend to consume it, as though it were real data
+                        4. Once integration is proved, flesh out backend to return actual data
                         ---
                         ## UAT & Internal Demos
 
