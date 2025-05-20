@@ -67,23 +67,17 @@
 
                         **Total: £1.00**
 
-                        Notes: so you run back to the kitchen and put on some mayo or whatever, come back. Now this is more like it! A touch of olive oil...
-                        ---
-                        What's the best sandwich you can make _for them_?
+                        Notes:
+                        So you run back to the kitchen and put on some mayo or whatever, come back. Now this is more like it! A touch of olive oil...
 
-                        <!-- TODO: improve this question, more impact -->
-                        <!-- If you cannot think of something better, might just want to skip the question altogether -->
-
-                        Notes: what I described there in an arguably contrived way is two types of feedback loops.
+                        What I described there in an arguably contrived way is two types of feedback loops.
                         Both of them ended up roughly at the same place place, only one of them got there a lot sooner and cheaper.
                         One of them led to a quick, cheap, positive conclusion where customer's expectations were
                         met relatively quickly and cheaply, and another one where things didn't go as well.
                         ---
                         ## What is a feedback loop?
 
-                        A feedback loop is a cyclical process of acting, checking results against a goal, and adjusting actions until the goal is reached or a desired state is maintained.
-
-                        [Illustration]
+                        A feedback loop is a cycle of acting, evaluating results against a goal, and then adjusting actions to achieve the goal or maintain a desired state.
                         ---
                         ## Feedback loops in our daily lives
 
@@ -111,7 +105,6 @@
                         Say it like this: Scrum sprints? that’s a feedback loop, roadmaps? a feedback loop,
                         ---
                         ![](img/devops.png)
-                        <!--  https://tomd.xyz/devops-guide/ -->
 
                         Notes:
                         CI/CD? all about the loops.
@@ -120,8 +113,7 @@
                         ---
                         ## Not all loops are good
 
-                        - Audio feedback
-                        - A misconfigured API request retry mechanism
+                        - Runaway retries in distributed systems
                         - Goodhart's Law
                         - Wanting to punch ChatGPT after it tried to gaslight you for the 5th time in the same convo
 
@@ -134,9 +126,9 @@
                         ![](img/hotwheels.jpeg) <!-- .element: height="600" -->
 
                         Notes:
-                        Anyway, let's go back to the good loops, let's talk about fun loops!
-                        show of hands who played Hot Wheels or similar game as a kid.
-                        If you didn't play yourself but have bought your own kids a Hot Wheels set, that counts too.
+                        Anyway, let's talk about other kinds of loops, let's talk about fun loops now!
+                        Show of hands who played Hot Wheels or similar racing games as a kid.
+
                         The idea is we want more of these loops. But why? Why not just go in a straight line?
                         ---
                         ## Failing Fast
@@ -144,13 +136,14 @@
                         ![](img/zuck.jpg)
 
                         Notes:
+                            If there is an issue, your quickest, tightest, smallest loops may not catch it in its entirety (as its implications could be broad), but you may catch a bit of it: enough to signal there’s trouble afoot. So you iron out the problem without having to go to the bigger loops yet. And when you do, you do your bigger loops next, to make sure you removed all of the problem, not just the small bit your tightest loop was able to identify
+
                             Moving fast enables us to build more things and learn faster.
                             However, as most companies grow, they slow down too much because they're
                             more afraid of making mistakes than they are of losing opportunities by
                             moving too slowly. We have a saying: 'Move fast and break
                             things.' The idea is that if you never break anything, you're probably
                             not moving fast enough.
-                            If there is an issue, your quickest, tightest, smallest loops may not catch it in its entirety (as its implications could be broad), but you may catch a bit of it: enough to signal there’s trouble afoot. So you iron out the problem without having to go to the bigger loops yet. And when you do, you do your bigger loops next, to make sure you removed all of the problem, not just the small bit your tightest loop was able to identify
                         ---
                         ## More loops, tighter, faster!
 
@@ -161,7 +154,7 @@
                         Notes:
                         This doesn’t mean rush through things, but to make small, constant adjustments through small iterations.
                         ---
-                        ## Standard SDLC
+                        ## A Typical SDLC
 
                         ![](img/sdlc-loose.png) <!-- .element: height="600" -->
 
@@ -192,7 +185,7 @@
                         into the loop. But what if the ramp is sending us into the wrong kind of loop? How can we better integrate this
                         step into our cycles?
                         ---
-                        ## Business Strategy Alignment
+                        ## 💰 Business Strategy Alignment
 
                         - Do you even need to do the work?
                         - If you do, do you need to do _that_ much to start with?
@@ -207,7 +200,7 @@
                         The best kind of work is the work you don't have to do.
                         How do you save yourself some cycles through the loop?
                         ---
-                        ## User story
+                        ## 🧑 User story
 
                         <!-- Do emoji on the titles so they're not so boring to look at -->
 
@@ -224,7 +217,7 @@
                         ---
                         ![](img/vertical-slices.png) <!-- .element: height="800" -->
                         ---
-                        ## Writing code
+                        ## 🔨 Writing code
 
                         - IDE hints
                         - Compiler (if there is one)
@@ -233,7 +226,7 @@
 
                         Notes: this one's easy
                         ---
-                        ## Unit tests
+                        ## 🧪 Unit tests
 
                         - TDD
                         - Hot reloading
@@ -242,7 +235,7 @@
 
                         Notes: if running your full unit test suite takes more than a few seconds, they're not fast
                         ---
-                        ## Manual testing in local dev environment
+                        ## 🐞 Manual testing in local dev environment
 
                         - Do it less by writing more automated tests if you can
                         - Aim to have a repeatable, automated environment & data setup process, e.g. Docker, minikube, etc.
@@ -250,12 +243,12 @@
 
                         Notes: mount Docker volumes if you use Docker for your local environments
                         ---
-                        ## Code & architecture reviews
+                        ## 🔎 Code & architecture reviews
 
                         - Pair & ensemble programming
                         - Whiteboarding
                         ---
-                        ## Continuous Integration
+                        ## 🔄 Continuous Integration
 
                         - Fast build pipelines
                         - Build on PR / push
@@ -270,11 +263,11 @@
 
                         W. Edwards Deming
                         ---
-                        ## Testing in an integration environment
+                        ## ✅ Testing in an integration environment
 
                         - Ephemeral, preview environments
-                        - Build interfaces first
                         - No QA handovers
+                        - Build interfaces first
 
                         ---
                         ## Canned to realsies
@@ -293,7 +286,7 @@
                         3. Build enough of the frontend to consume it, as though it were real data
                         4. Once integration is proved, flesh out backend to return actual data
                         ---
-                        ## UAT & Internal Demos
+                        ## 🚦 UAT & Internal Demos
 
                         - Show progress to stakeholders and obtain feedback frequently (at least once a week, more often if you can!)
                         - Ask people to use your system and watch them while they do it
@@ -302,9 +295,9 @@
                         Notes:
                         If they get confused or ask questions, that's a bug.
                         ---
-                        ## Releasing
+                        ## 🚀 Releasing
 
-                        - *Release small and frequently*
+                        - *Small, frequent releases*
                         - Deployment pipelines
                         - Monitoring
                         - Feature toggles
